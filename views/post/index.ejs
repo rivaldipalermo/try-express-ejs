@@ -1,0 +1,43 @@
+<%- include('../includes/header'); %>
+
+  <div class="container">
+    <h1>All Post</h1>
+    <a href="/posts/create">
+        <button class="btn btn-primary">Create Post</button>
+    </a>
+    <div>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% posts.forEach(function(post) { %>
+                    <tr>
+                      <td><%= post.id %></td>
+                      <td><%= post.title %></td>
+                      <td><%= post.content %></td>
+                      <td>
+                        <a href="/posts/<%= post.id %>/edit">
+                            <button class="btn btn-primary">
+                              Edit
+                            </button>
+                          </a>
+                          <a href="/posts/<%= post.id %>/delete">
+                            <button class="btn btn-danger">
+                              Delete
+                            </button>
+                          </a>
+                      </td>
+                    </tr>
+                <% }); %> 
+            </tbody>
+          </table>
+        </div>
+  </div>
+
+  <%- include('../includes/footer'); %>
