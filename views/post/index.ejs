@@ -21,17 +21,20 @@
                       <td><%= post.id %></td>
                       <td><%= post.title %></td>
                       <td><%= post.content %></td>
-                      <td>
+                      <td class="d-flex">
                         <a href="/posts/<%= post.id %>/edit">
                             <button class="btn btn-primary">
                               Edit
                             </button>
                           </a>
                           <a href="/posts/<%= post.id %>/delete">
+                          <form action="/posts/<%= post.id %>/delete?_method=delete" method="post">
+                            <!-- <input type="hidden" name="_method" value="delete" /> -->
                             <button class="btn btn-danger">
                               Delete
                             </button>
                           </a>
+                        </form>
                       </td>
                     </tr>
                 <% }); %> 
