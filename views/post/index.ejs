@@ -23,18 +23,19 @@
                       <td><%= post.content %></td>
                       <td class="d-flex">
                         <a href="/posts/<%= post.id %>/edit">
-                            <button class="btn btn-primary">
-                              Edit
-                            </button>
-                          </a>
-                          <a href="/posts/<%= post.id %>/delete">
+                          <button class="btn btn-primary">
+                            Edit
+                          </button>
+                        </a>
+                        &nbsp;
+                        <a href="/posts/<%= post.id %>/delete" onclick="return confirm('Apakah anda yakin hapus post ini ?')">
                           <form action="/posts/<%= post.id %>/delete?_method=delete" method="post">
                             <!-- <input type="hidden" name="_method" value="delete" /> -->
                             <button class="btn btn-danger">
                               Delete
                             </button>
-                          </a>
-                        </form>
+                          </form>
+                        </a>
                       </td>
                     </tr>
                 <% }); %> 
