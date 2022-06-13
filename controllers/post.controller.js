@@ -17,7 +17,7 @@ module.exports = {
   },
   show: async (req, res) => {
     // galih's todo
-    const posts = await Post.findAll({
+    const posts = await Post.findOne({
       where: {
         id: req.params.id,
       },
@@ -26,13 +26,13 @@ module.exports = {
     if (!posts) {
       return res.redirect("/posts");
     }
-    
-    return res.render("post/edit",{
+
+    return res.render("post/edit", {
       posts,
     });
   },
   update: async (req, res) => {
-    const posts = await Post.findAll({
+    const posts = await Post.findOne({
       where: {
         id: req.params.id,
       },

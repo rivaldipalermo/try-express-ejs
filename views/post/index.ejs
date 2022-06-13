@@ -22,14 +22,14 @@
                       <td><%= post.title %></td>
                       <td><%= post.content %></td>
                       <td class="d-flex">
-                        <a href="/posts/edit/<%= post.id %>">
+                        <a href="/posts/<%= post.id %>">
                           <button class="btn btn-primary">
                             Edit
                           </button>
                         </a>
                         &nbsp;
-                        <a href="/posts/<%= post.id %>/delete" onclick="return confirm('Apakah anda yakin hapus post ini ?')">
-                          <form action="/posts/<%= post.id %>/delete?_method=delete" method="post">
+                        <a href="/posts/<%= post.id %>" onclick="return confirm('Apakah anda yakin hapus post ini ?')">
+                          <form action="/posts/<%= post.id %>?_method=delete" method="post">
                             <!-- <input type="hidden" name="_method" value="delete" /> -->
                             <button class="btn btn-danger">
                               Delete
